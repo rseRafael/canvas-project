@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</head>
+<body>
+    <ul>
+        <li>
+            <button id="BlueButton"> Blue</button>
+        </li>
+        <li>
+            <button id="GreenButton"> Green</button>
+        </li>
+        <li>
+            <button id="PinkButton">Pink</button>
+        </li>
+    </ul>
+    <div>
+        <button id="openB">Open Highlight</button>
+        <button id="closeB">Close Highlight</button>
+        <label>
+            Line Width: 
+            <input type="number" name="width" id="lineWidth" placeholder="3"/>
+        </label>
+        <label>
+            line Size:
+            <input type="number" id="lineSize" placeholder="10"/>
+        </labe>
+        
+    </div>
+    <div>
+        <button id="backward">Backward</button>
+        <button id="forward">Forward</button>
+        <button id="eraseAll">Erase All</button>
+    </div>
+   
+    <canvas id="myCanvas" height="500" width="500" >
+
+    </canvas>
+    <img id="canvas-image"/>
+</body>
+</html>

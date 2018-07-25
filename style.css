@@ -1,0 +1,16 @@
+#myCanvas{
+    border: 10px solid green;
+    cursor: pointer;
+}
+
+#BlueButton{
+    background-Color: blue;
+}
+
+#GreenButton{
+    background-color: green;
+}
+
+#PinkButton{
+    background-color: palevioletred;
+}
