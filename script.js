@@ -56,6 +56,7 @@ function createMarkUp(ctx, x, y, color = "black", width = 3,  size = 10, mode = 
                 "size": size,
             });
             console.log(stack);
+            stackGarbage = [];
         }
         
     }
@@ -78,8 +79,16 @@ function replace(){
     ctx.fillRect(0,0,canvas.clientWidth, canvas.clientHeight);
 }
 
+function loadImage(){
+    var img = document.getElementById("canvas-image");
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    context.drawImage(img, 0, 0);
+    console.log("loadImage done");
+ }
+
 function reCall(){
-    replace();
+    loadImage();
     var canvas  = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     for(var i = 0; i < stack.length; i++){
@@ -88,8 +97,15 @@ function reCall(){
 }
 
 
+
+
 $(document).ready(
     function(){
+        var img = document.getElementById("canvas-image");
+        var canvas = document.getElementById("myCanvas");
+        canvas.setAttribute("height", img.height);
+        canvas.setAttribute("width", img.width);
+        console.log("set canvas size done"); 
         
         $("#BlueButton").click(
             function(){
@@ -131,6 +147,13 @@ $(document).ready(
             ()=>{ forward();}
         );
 
+        $("#imageButton").click(
+            ()=>{
+                loadImage();
+            }
+        )
+
+
         $("#myCanvas").click(
             function(Mouse, ...moreThing){
                 var context = document.getElementById("myCanvas").getContext("2d");
@@ -138,7 +161,7 @@ $(document).ready(
                 var y = Mouse.offsetY;
                 var width = Math.round(document.getElementById("lineWidth").value);
                 var size = Math.round(document.getElementById("lineSize").value);
-                createMarkUp(context,x, y, color, width, size);
+                createMarkUp(context,x, y, color, width, size, mode);
                 console.log(stack);
                 
             }
